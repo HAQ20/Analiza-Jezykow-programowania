@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Popularność języków</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Analiza Popularności Języków Programowania</h1>
+    </header>
+    <main>
+        <div class="chart_container"> 
+            <canvas id="chart"></canvas>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+  <script>
+    // Wczytywanie data.json
+    fetch("data.json")
+      .then(r => r.json())
+      .then(data => {
+
+
+        // grupowamie i indexowanie osobnych języków żeby się osobno dało jakoś do nich ustawiać proporcje type shit
+        const datasets = Object.entries(data.series).map(
+        ([lang, values], index) => ({
+            label: lang,
+            data: values,
+            tension: 0.3,
+        })
+        );
+
+        // wykres
+        new Chart(document.getElementById("chart"), { // to jest giga fajne https://www.w3schools.com/js/js_graphics_chartjs.asp
+        //  https://www.chartjs.org/docs/latest/general/options.html
+
+          type: "line",
+
+          data: { labels: data.years, datasets }, // lata i dane na jeden język z ustawionymi proporcjami i stuff, tam na górze jest datasets możecie to przeczytać
+          options: {
+            interaction: { mode: "index", intersect: false }, // tooltip pokazuje wszystkie języki naraz
+            plugins: {
+              title: { display: true, text: "Nowe repozytoria na GitHubie według roku" } 
+            },
+            scales: {
+              y: { title: { display: true, text: "Liczba repozytoriów" } }
+            }
+          }
+        });
+      });
+  </script>
+</html>
