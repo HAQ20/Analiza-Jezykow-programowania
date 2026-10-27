@@ -1,4 +1,28 @@
 .chart_container {
-    width: 800px;
-    height: 400px;
+    width: 600px;
+    height: 300px;
+    display: flex;
+
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    background-color: brown;
+    border-bottom-left-radius:10px;
+}
+main{
+    display: flex;
+}
+.main_box{
+    width: 80%;
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 10px;
+}
+h1{
+    text-align: center;
 }
