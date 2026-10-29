@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Popularność języków</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
   <div class="main_box">
@@ -11,18 +12,42 @@
         <h1>Analiza Popularności Języków Programowania</h1>
     </header>
     <main>
-        <nav>
-          <a href="">Lorem Ipsum</a>
+        <nav id="main-nav" aria-label="Opisy języków">
+          <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
+            <span class="nav_toggle_icon" aria-hidden="true">☰</span>
+            <span class="nav_toggle_label">Zwiń menu</span>
+          </button>
+          <h1>Opisy</h1>
+          <div id="language-links" class="nav_links">
+            <!-- to wy robicie mi się nie chce -->
+            <a href=""><i class="devicon-python-plain" aria-hidden="true"></i>Opis języka Python</a>
+            <a href=""><i class="devicon-php-plain" aria-hidden="true"></i>Opis języka Php</a>
+            <a href=""><i class="devicon-javascript-plain" aria-hidden="true"></i>Opis języka JavaScript</a>
+            <a href=""><i class="devicon-java-plain" aria-hidden="true"></i>Opis języka Java</a>
+            <a href=""><i class="devicon-kotlin-plain" aria-hidden="true"></i>Opis języka Kotlin</a>
+            <a href=""><i class="devicon-cplusplus-plain" aria-hidden="true"></i>Opis języka C++</a>
+          </div>
         </nav>
-        <div class="chart_container"> 
+        <div class="section_container">
+            <p>
+              Analizujemy popularność języków programowania na podstawie liczby nowych repozytoriów na GitHubie w latach 2008-2025. Dane zostały zebrane z oficjalnego API GitHub i przedstawione w formie wykresu liniowego.
+            </p>
             <canvas id="chart"></canvas>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="scrolling">
+        <span>Projekt stworzony przez:</span>
+        <span>Antoni Trzebuniak</span>
+        <span>Jan Orda</span>
+        <span>Dawid Wójtowicz</span>
+      </div>
+    </footer>
     </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+  
   <script>
     // Wczytywanie data.json
     fetch("data.json")
@@ -49,13 +74,28 @@
           options: {
             interaction: { mode: "index", intersect: false }, // tooltip pokazuje wszystkie języki naraz
             plugins: {
-              title: { display: true, text: "Nowe repozytoria na GitHubie według roku" } 
+              title: { display: true, text: "Nowe repozytoria na GitHubie według roku", font: { size: 15 } } 
             },
             scales: {
-              y: { title: { display: true, text: "Liczba repozytoriów" } }
+              y: { title: { display: true, text: "Liczba repozytoriów", font: { size: 15 } } }
             }
           }
         });
       });
+  </script>
+  <script>
+    // animation script
+    const navigation = document.getElementById("main-nav");
+    const navigationToggle = navigation.querySelector(".nav_toggle");
+    const navigationLabel = navigationToggle.querySelector(".nav_toggle_label");
+    navigation.style.height = `${navigation.getBoundingClientRect().height}px`;
+
+    navigationToggle.addEventListener("click", () => {
+      const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
+
+      navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigationLabel.textContent = isExpanded ? "Rozwiń menu" : "Zwiń menu";
+      navigation.classList.toggle("is-collapsed", isExpanded);
+    });
   </script>
 </html>

@@ -1,28 +1,330 @@
-.chart_container {
-    width: 600px;
-    height: 300px;
-    display: flex;
-
+* {
+    box-sizing: border-box;
 }
-body{
-    background-color: black;
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px;
+    background-image: url("assets/BUILD059.png");
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    animation: move-background 25s linear infinite;
 }
-nav{
+
+@keyframes move-background {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 400px 400px;
+    }
+}
+
+.main_box {
+    width: min(1600px, 100%);
+    min-height: min(700px, 90vh);
+    overflow: hidden;
+    background-color: rgb(243, 226, 178);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+    border: 4px solid black;
+}
+
+header {
+    position: relative;
+    padding: 24px 32px;
+    color: rgb(49, 34, 34);
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    color: brown;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+    text-shadow: 2px 2px 0 rgba(132, 0, 0, 0.12);
+}
+
+header::after {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 16px auto 0;
     background-color: brown;
-    border-bottom-left-radius:10px;
+    content: "";
+    opacity: 0.8;
 }
-main{
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+main {
+    min-height: 560px;
     display: flex;
 }
-.main_box{
-    width: 80%;
-    margin-top: 10%;
-    background-color: white;
-    border-radius: 10px;
+
+/* NAVIGATION */
+
+
+nav {
+    width: 250px;
+    flex-shrink: 0;
+    padding: 24px 16px 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 0 10px 10px 0;
+    transition: width 0.2s ease, padding 0.2s ease;
+    overflow: hidden;
+    position: relative;
+    align-self: stretch;
+    background-color: transparent;
 }
-h1{
+
+nav::before {
+    position: absolute;
+    inset: 0 0 10px;
+    z-index: 0;
+    background-color: brown;
+    border-radius: 0 10px 10px 0;
+    content: "";
+}
+
+.nav_toggle_label {
+    display: block;
+    position: absolute;
+    left: 50%;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%);
+    transition: opacity 0.15s ease, visibility 0s linear 0.15s;
+}
+
+.nav_toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 16px 8px;
+    padding: 20px;
+    color: rgb(255, 168, 168);
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.nav_toggle:hover,
+.nav_toggle:focus-visible {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav_toggle_icon {
+    position: absolute;
+    left: 12px;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+nav.is-collapsed .nav_toggle_icon {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav > h1,
+.nav_links {
+    position: relative;
+    z-index: 1;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.15s ease, visibility 0s linear 0.15s;
+}
+
+nav.is-collapsed {
+    width: 68px;
+    padding-right: 0;
+}
+
+nav.is-collapsed .nav_toggle {
+    margin: 0 8px;
+}
+
+nav.is-collapsed .nav_toggle_label,
+nav.is-collapsed > h1,
+nav.is-collapsed .nav_links {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.1s ease, visibility 0s;
+}
+
+nav a,
+nav h1 {
+    padding: 15px 16px;
+    color: rgb(255, 168, 168);
+    border-radius: 0 10px 10px 0;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    border: solid rgba(0, 0, 0, 0.2);
+    border-width: 2px 2px 2px 0;
+}
+
+nav a i {
+    flex: 0 0 22px;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+.section_container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    min-height: 300px;
+    padding: 24px;
+    flex-direction: column;
+}
+
+.section_container p {
+    width: min(900px, 90%);
+    margin: 10% 0 24px;
+    padding: 18px 22px;
+    color: rgb(49, 34, 34);
+    background-color: rgba(255, 255, 255, 0.45);
+    border-left: 6px solid brown;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px 8px rgba(49, 34, 34, 0.18);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.section_container canvas {
+    margin-right: 100px;
+}
+
+
+/* FOOTER */
+footer{
+    padding: 16px;
+}
+
+footer::before{
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 16px auto 0;
+    background-color: brown;
+    content: "";
+    opacity: 0.8;
+}
+
+.scrolling {
+    margin-top: 16px;
+    width: 100%;
+    display: inline-block;
+    animation: scroll-text 10s linear infinite;
+}
+.scrolling:hover {
+    animation-play-state: paused;
+}
+.scrolling span {
+    padding-right: 5%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@keyframes scroll-text {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-80%); }
+}
+
+
+@media (max-width: 650px) {
+    body {
+        padding: 16px;
+        align-items: flex-start;
+    }
+
+    .main_box {
+        min-height: auto;
+    }
+
+    main {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    nav {
+        width: 100%;
+        flex-direction: column;
+        align-self: auto;
+        padding: 12px 12px 12px 0;
+        gap: 8px;
+    }
+
+    nav::before {
+        inset: 0 0 10px;
+    }
+
+    nav.is-collapsed {
+        width: 100%;
+    }
+
+    nav > h1 {
+        width: 100%;
+        padding: 10px 12px;
+    }
+
+    .nav_links {
+        width: 100%;
+    }
+
+    .chart_container {
+        min-height: 300px;
+    }
+
+    .section_container {
+        height: auto;
+        padding: 20px 16px;
+    }
+
+    .section_container p {
+        margin-bottom: 20px;
+        padding: 16px 18px;
+        font-size: 1rem;
+    }
 }
