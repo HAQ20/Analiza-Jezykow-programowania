@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Język programowania Kotlin</title>
+    <link rel="stylesheet" href="kotlin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main_box">
+        <header>
+            <h1>Język programowania Kotlin</h1>
+        </header>
+
+        <main>
+            <nav id="main-nav" aria-label="Menu języków">
+                <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
+                    <span class="nav_toggle_icon" aria-hidden="true">☰</span>
+                    <span class="nav_toggle_label">Zwiń</span>
+                </button>
+
+                <h1>Menu</h1>
+
+                <div id="language-links" class="nav_links">
+                    <a href="index.html">
+                        <img src="assets/home-icon.png" alt="home" class="home_icon">
+                        <span>Strona główna</span>
+                    </a>
+                    <a href="">
+                        <i class="devicon-python-plain"></i>
+                        <span>Opis języka Python</span>
+                    </a>
+                    <a href="">
+                        <i class="devicon-php-plain"></i>
+                        <span>Opis języka Php</span>
+                    </a>
+                    <a href="">
+                        <i class="devicon-javascript-plain"></i>
+                        <span>Opis języka JavaScript</span>
+                    </a>
+                    <a href="java.html">
+                        <i class="devicon-java-plain"></i>
+                        <span>Opis języka Java</span>
+                    </a>
+                    <a href="kotlin.html" class="active">
+                        <i class="devicon-kotlin-plain"></i>
+                        <span>Opis języka Kotlin</span>
+                    </a>
+                    <a href="cpp.html">
+                        <i class="devicon-cplusplus-plain"></i>
+                        <span>Opis języka C++</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="section_container">
+                <section>
+                    <h2>Czym jest Kotlin?</h2>
+                    <p>Kotlin to nowoczesny, statycznie typowany język programowania stworzony przez firmę JetBrains. Działa na maszynie wirtualnej Java (JVM) i może współpracować z kodem napisanym w Javie. Jest wykorzystywany przede wszystkim do tworzenia aplikacji na Androida, ale sprawdza się również w programowaniu serwerowym, webowym i wieloplatformowym.</p>
+                </section>
+
+                <section>
+                    <h2>Historia języka Kotlin</h2>
+                    <ul>
+                        <li><strong>2011</strong> - firma JetBrains ogłosiła prace nad nowym językiem programowania Kotlin.</li>
+                        <li><strong>2012</strong> - kod źródłowy Kotlina został udostępniony jako open source.</li>
+                        <li><strong>2016</strong> - wydano stabilną wersję Kotlin 1.0.</li>
+                        <li><strong>2017</strong> - Google ogłosiło oficjalne wsparcie Kotlina w tworzeniu aplikacji na Androida.</li>
+                        <li><strong>2018</strong> - pojawiła się wersja Kotlin 1.3, wprowadzająca między innymi coroutines.</li>
+                        <li><strong>2020</strong> - rozpoczęto rozwój Kotlin Multiplatform.</li>
+                        <li><strong>2021</strong> - wydano Kotlin 1.5.</li>
+                        <li><strong>2023</strong> - pojawiła się wersja Kotlin 1.9.</li>
+                        <li><strong>2024</strong> - wydano Kotlin 2.0, wprowadzając nowy kompilator K2.</li>
+                        <li><strong>2025</strong> - rozwój języka kontynuowano w ramach serii Kotlin 2.x.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Popularność Kotlina</h2>
+                    <p>Kotlin zdobył dużą popularność przede wszystkim dzięki zastosowaniu w tworzeniu aplikacji na system Android. Jest oficjalnie wspierany przez Google i stanowi jedną z najważniejszych alternatyw dla Javy w tym obszarze. Jego popularność wynika między innymi z czytelnej składni, bezpieczeństwa typów oraz możliwości współpracy z Javą.</p>
+                    <p>Poniższy wykres przedstawia liczbę nowych repozytoriów na GitHubie przypisanych do języka Kotlin w poszczególnych latach.</p>
+                    <div class="chart_container">
+                        <canvas id="languageChart"></canvas>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Aktualne wersje</h2>
+                    <ul>
+                        <li><strong>Kotlin 2.x</strong> - główna linia rozwoju języka, wykorzystująca nowy kompilator K2.</li>
+                        <li><strong>Kotlin Multiplatform</strong> - technologia umożliwiająca współdzielenie kodu między różnymi platformami.</li>
+                        <li><strong>Kotlin/JVM</strong> - wersja przeznaczona do uruchamiania programów na maszynie wirtualnej Java.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Podsumowanie</h2>
+                    <p>Kotlin jest nowoczesnym językiem programowania, który szczególnie dobrze sprawdza się przy tworzeniu aplikacji mobilnych. Łączy czytelną składnię z możliwością korzystania z istniejących bibliotek Javy. Dzięki wsparciu Google i rozwojowi Kotlin Multiplatform jego zastosowanie wykracza poza sam system Android.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="scrolling">
+                <span>Projekt stworzony przez:</span>
+                <span>Antoni Trzebuniak</span>
+                <span>Jan Orda</span>
+                <span>Dawid Wójtowicz</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const navigation = document.getElementById("main-nav");
+        const navigationToggle = navigation.querySelector(".nav_toggle");
+        const navigationLabel = navigationToggle.querySelector(".nav_toggle_label");
+
+        navigationToggle.addEventListener("click", () => {
+            const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
+
+            navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
+            navigationLabel.textContent = isExpanded ? "Rozwiń" : "Zwiń";
+            navigation.classList.toggle("is-collapsed", isExpanded);
+        });
+
+        fetch("data.json")
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById("languageChart");
+
+                new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: data.years,
+                        datasets: [{
+                            label: "Nowe repozytoria Kotlin",
+                            data: data.series.Kotlin,
+                            borderColor: "#477DA8",
+                            backgroundColor: "rgba(71, 125, 168, 0.12)",
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            tension: 0.3,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: { color: "#333b43" }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: "#333b43" },
+                                grid: { color: "rgba(51, 59, 67, 0.12)" }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                ticks: { color: "#333b43" },
+                                grid: { color: "rgba(51, 59, 67, 0.12)" }
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

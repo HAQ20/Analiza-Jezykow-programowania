@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/BUILD059.png");
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    font-family: Arial, sans-serif;
+}
+
+.main_box {
+    width: min(1600px, 100%);
+    min-height: min(700px, 90vh);
+    background-color: #e2dfe5;
+    border: 2px solid #17131d;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background-color: #17131d;
+    color: #f2edf7;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 65%;
+    height: 3px;
+    margin: 15px auto 0;
+    background-color: #8062a8;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+
+nav {
+    position: relative;
+    flex-shrink: 0;
+    width: 250px;
+    padding: 20px 0 20px 0; 
+    background-color: #49345f;
+    color: white;
+    overflow: hidden;
+    transition: width 0.3s ease;
+}
+
+nav > * {
+    position: relative;
+}
+
+nav > h1 {
+    margin: 20px 0 15px 0;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.nav_toggle {
+    width: calc(100% - 12px); 
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 10px 10px 0; 
+    border-left: none; 
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.nav_toggle:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    border-left: none;
+}
+
+.nav_toggle_icon {
+    font-size: 1.2rem;
+}
+
+.nav_toggle_label {
+    white-space: nowrap;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+
+.nav_links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: calc(100% - 12px); 
+    padding: 12px 15px;
+    border-radius: 0 10px 10px 0; 
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-left: none; 
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.nav_links a:hover,
+.nav_links a.active {
+    background-color: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
+    border-left: none;
+}
+
+.nav_links i,
+.home_icon {
+    min-width: 22px;
+    width: 22px;
+    height: 22px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Stan zwinięty */
+nav.is-collapsed {
+    width: 68px;
+    padding: 20px 8px; 
+}
+
+nav.is-collapsed > h1,
+nav.is-collapsed .nav_toggle_label,
+nav.is-collapsed .nav_links a span {
+    display: none;
+}
+
+nav.is-collapsed .nav_toggle {
+    width: 100%;
+    border-radius: 8px;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 5px;
+}
+
+nav.is-collapsed .nav_links {
+    align-items: center;
+}
+
+nav.is-collapsed .nav_links a {
+    justify-content: center;
+    width: 48px;
+    height: 45px;
+    padding: 0;
+    border-radius: 10px;
+    border-left: 1.5px solid rgba(255, 255, 255, 0.15); 
+}
+
+nav.is-collapsed .nav_links a:hover,
+nav.is-collapsed .nav_links a.active {
+    border-left: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+.section_container {
+    flex: 1;
+    min-width: 0;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1.5px solid #b9b0c3;
+    border-radius: 8px;
+    background-color: #f3f0f5;
+}
+
+section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    color: #60477f;
+    border-bottom: 2px solid #8062a8;
+}
+
+section p,
+section li {
+    line-height: 1.7;
+}
+
+section ul {
+    padding-left: 25px;
+}
+
+.chart_container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 12px 0;
+    overflow: hidden;
+    background-color: #17131d;
+    color: #f2edf7;
+}
+
+.scrolling {
+    width: max-content;
+    animation: scroll 25s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
