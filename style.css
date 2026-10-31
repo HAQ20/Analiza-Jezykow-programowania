@@ -36,6 +36,29 @@ body {
     border: 4px solid black;
 }
 
+.main_box.subpage {
+    display: flex;
+    flex-direction: column;
+}
+
+.subpage header,
+.subpage footer {
+    flex-shrink: 0;
+}
+
+.subpage main {
+    flex: 0 0 640px;
+    height: 640px;
+    min-height: 640px;
+    overflow: hidden;
+}
+
+.subpage .section_container {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
 header {
     position: relative;
     padding: 24px 32px;
@@ -344,9 +367,23 @@ footer::before {
         min-height: auto;
     }
 
+    .main_box.subpage {
+        height: auto;
+    }
+
+    .subpage main {
+        flex: none;
+        height: auto;
+        min-height: auto;
+    }
+
     main {
         flex-direction: column;
         min-height: auto;
+    }
+
+    .subpage main {
+        overflow: visible;
     }
 
     nav {
@@ -381,6 +418,10 @@ footer::before {
     .section_container {
         height: auto;
         padding: 20px 16px;
+    }
+
+    .subpage .section_container {
+        overflow-y: visible;
     }
 
     .section_container p {
