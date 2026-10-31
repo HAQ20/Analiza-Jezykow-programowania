@@ -204,7 +204,14 @@ nav a:hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-
+.home_icon {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    filter: brightness(0) saturate(100%) invert(77%) sepia(17%) saturate(1017%) hue-rotate(314deg) brightness(105%) contrast(101%);
+    /* nie pytajcie xdddd*/
+    /* nie ma devicona na zwykły dom to jest powalone */
+}
 
 .section_container {
     width: 100%;
