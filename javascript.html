@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Popularność języków</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+  <div class="main_box">
+    <header>
+        <h1><span id="wipe">Język Programowania JavaScript</span></h1>
+    </header>
+    <main>
+        <nav id="main-nav" aria-label="Opisy języków">
+          <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
+            <span class="nav_toggle_icon" aria-hidden="true">☰</span>
+            <span class="nav_toggle_label">Zwiń</span>
+          </button>
+          <h1>Menu</h1>
+          <div id="language-links" class="nav_links">
+            <!-- to wy robicie mi się nie chce -->
+             <a href="index.html"><img src="assets/home-icon.png" alt="home" class="home_icon"></i>Strona główna</a>
+            <a href="python.html"><i class="devicon-python-plain" aria-hidden="true"></i>Opis języka Python</a>
+            <a href="php.html"><i class="devicon-php-plain" aria-hidden="true"></i>Opis języka PHP</a>
+            <a href="javascript.html"><i class="devicon-javascript-plain" aria-hidden="true"></i>Opis języka JavaScript</a>
+            <a href=""><i class="devicon-java-plain" aria-hidden="true"></i>Opis języka Java</a>
+            <a href=""><i class="devicon-kotlin-plain" aria-hidden="true"></i>Opis języka Kotlin</a>
+            <a href=""><i class="devicon-cplusplus-plain" aria-hidden="true"></i>Opis języka C++</a>
+          </div>
+        </nav>
+        <div class="section_container">
+            <style>
+              body{
+                  background-image: url("assets/BUILD154.png");
+                  background-size: 100px 100px;
+                }
+              .home_icon{
+                filter: brightness(0) saturate(100%) invert(20%);
+              }
+              .section_container {
+                height: auto;
+                margin-top: 0;
+                justify-content: flex-start;
+                align-items: stretch;
+                
+              }
+              .main_box {
+                background-color: rgb(255, 253, 230);
+              }
+              header h1{
+                color: rgb(50, 51, 48);
+              }
+              nav::before{
+                background-color: rgb(247, 223, 30);
+              }
+              .nav_toggle{
+                color: rgb(50, 51, 48);
+              }
+              nav a,
+              nav h1,
+              .nav_toggle{
+                color: rgb(50, 51, 48);
+              }
+              header::after{
+                background-color: rgb(247, 223, 30);
+              }
+              .section_container .bordered_text {
+                margin: 10px 0 24px;
+                text-align: justify;
+              }
+              nav h1{
+                color: rgb(50, 51, 48);
+              }
+              .bordered_text{
+                border-left: 6px solid rgb(247, 223, 30);
+              }
+            </style>
+            <p class="bordered_text">
+              JavaScript to dynamiczny język programowania, który początkowo umożliwiał dodawanie interakcji do stron internetowych. Dzięki środowiskom takim jak Node.js działa również po stronie serwera, a standard ECMAScript rozwija jego możliwości.
+            </p>
+            
+            
+            <p class="bordered_text">
+                <strong>Popularność:</strong><br> Według danych projektu liczba nowych repozytoriów z JavaScriptem wzrosła z 476 w 2008 roku do 16 422 w 2025 roku — około 34 razy. W tym zestawieniu najwyższy wynik przypadł na 2017 rok: 33 452 repozytoria.
+            </p>
+            
+            <p class="bordered_text">
+                <strong>Skąd ta popularność?</strong><br> JavaScript jest natywnie obsługiwany przez przeglądarki, ma rozbudowany ekosystem bibliotek i pozwala tworzyć interfejsy oraz aplikacje działające zarówno w przeglądarce, jak i na serwerze.
+            </p>
+            
+            <p class="bordered_text">
+                <strong>Historia i rozwój:</strong><br> Brendan Eich stworzył pierwszą wersję JavaScriptu w 1995 roku dla przeglądarki Netscape. Język jest standaryzowany jako ECMAScript; od 2015 roku nowe wydania standardu ukazują się regularnie.
+            </p>
+            <p class="bordered_text">
+                <strong>Najważniejsze zmiany w historii JavaScriptu:</strong><br>
+                <strong>1995 — pierwsza wersja:</strong> Brendan Eich tworzy język dla Netscape; początkowo znany jako Mocha, później LiveScript i JavaScript.<br>
+                <strong>1997 — ECMAScript 1:</strong> pierwsza edycja standardu ECMA-262 porządkuje podstawy języka i umożliwia rozwój zgodnych implementacji.<br>
+                <strong>1999 — ECMAScript 3:</strong> dodano m.in. wyrażenia regularne, obsługę wyjątków i więcej możliwości pracy z tekstem.<br>
+                <strong>2009 — ECMAScript 5:</strong> wprowadzono tryb ścisły, metody tablicowe oraz obsługę JSON.<br>
+                <strong>2015 — ECMAScript 2015 (ES6):</strong> duża aktualizacja dodała <code>let</code>/<code>const</code>, funkcje strzałkowe, klasy, moduły, szablony tekstowe i obietnice (<code>Promise</code>).<br>
+                <strong>2017 — ECMAScript 2017:</strong> dodano składnię <code>async</code>/<code>await</code>, ułatwiającą pracę z kodem asynchronicznym.<br>
+                <strong>2020 — ECMAScript 2020:</strong> pojawiły się m.in. operator opcjonalnego łańcuchowania <code>?.</code> i operator nullish coalescing <code>??</code>.<br>
+                <strong>2022 — ECMAScript 2022:</strong> dodano m.in. pola klas oraz metodę <code>Array.prototype.at()</code>.
+            </p>
+            <p class="bordered_text">
+                <strong>Gdzie się go używa?</strong><br> W interfejsach stron i aplikacji webowych, backendzie (np. Node.js), aplikacjach mobilnych i desktopowych oraz grach przeglądarkowych.
+            </p>
+            
+            <div class="sources">
+              <p class="bordered_text">Źródła:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN JavaScript</a>
+                <a href="https://tc39.es/ecma262/">Standard ECMAScript</a>
+                <a href="https://docs.github.com/en">GitHub API</a>
+              </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+      <div class="scrolling">
+        <span>Projekt stworzony przez:</span>
+        <span><a href="https://github.com/HAQ20">Antoni Trzebuniak</a></span>
+        <span><a href="https://github.com/janorda">Jan Orda</a></span>
+        <span><a href="https://github.com/Salamon4546">Dawid Wójtowicz</a></span>
+      </div>
+    </footer>
+    </div>
+</body>
+
+
+<script type="text/javascript">
+// <![CDATA[
+var speed=100; // speed colours change, 1 second = 1000
+var delay=25; // how long to wait for each wipe
+var alink=""; // page to link text to (set to ="" for no link)
+
+/****************************
+*   Wipe Out Text Effect    *
+*(c)2003-15 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+function addLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addLoadEvent(swab);
+
+var w_txt;
+function swab() { if (document.getElementById) {
+  var wiper=document.getElementById("wipe");
+  w_txt=wiper.firstChild.nodeValue;
+  while (wiper.childNodes.length) wiper.removeChild(wiper.childNodes[0]);
+  for (var i=0; i<w_txt.length; i++) {
+    var wipei=document.createElement("span");
+    wipei.setAttribute("id", "wipe"+i);
+    wipei.appendChild(document.createTextNode(w_txt.charAt(i)));
+    if (alink) {
+      wipei.style.cursor="pointer";
+      wipei.onclick=function() { top.location.href=alink; }
+    }
+    wiper.appendChild(wipei);
+  }
+  wipe(0);
+}}
+
+function wipe(c) {
+  if (c === 0) for (var w=0; w<w_txt.length; w++) document.getElementById("wipe"+ w).style.visibility="hidden";
+  if (c<w_txt.length) document.getElementById("wipe"+ c).style.visibility="visible";
+  setTimeout(function () {
+      wipe(c + 1);
+    }, speed);
+}
+// ]]>
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+  
+  <script>
+    // Wczytywanie data.json
+    fetch("data.json")
+      .then(r => r.json())
+      .then(data => {
+
+
+        // grupowamie i indexowanie osobnych języków żeby się osobno dało jakoś do nich ustawiać proporcje type shit
+        const datasets = Object.entries(data.series).map(
+        ([lang, values], index) => ({
+            label: lang,
+            data: values,
+            tension: 0.3,
+        })
+        );
+
+        // wykres
+        new Chart(document.getElementById("chart"), { // to jest giga fajne https://www.w3schools.com/js/js_graphics_chartjs.asp
+        //  https://www.chartjs.org/docs/latest/general/options.html
+
+          type: "line",
+
+          data: { labels: data.years, datasets }, // lata i dane na jeden język z ustawionymi proporcjami i stuff, tam na górze jest datasets możecie to przeczytać
+          options: {
+            interaction: { mode: "index", intersect: false }, // tooltip pokazuje wszystkie języki naraz
+            plugins: {
+              title: { display: true, text: "Nowe repozytoria na GitHubie według roku", font: { size: 15 } } 
+            },
+            scales: {
+              y: { title: { display: true, text: "Liczba repozytoriów", font: { size: 15 } } }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+          }
+        });
+      });
+  </script>
+  <script>
+    // animation script
+    const navigation = document.getElementById("main-nav");
+    const navigationToggle = navigation.querySelector(".nav_toggle");
+    const navigationLabel = navigationToggle.querySelector(".nav_toggle_label");
+    navigation.style.height = `${navigation.getBoundingClientRect().height}px`;
+
+    navigationToggle.addEventListener("click", () => {
+      const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
+
+      navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-collapsed", isExpanded);
+    });
+  </script>
+</html>

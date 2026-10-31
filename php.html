@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Popularność języków</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+  <div class="main_box">
+    <header>
+        <h1><span id="wipe">Język Programowania PHP</span></h1>
+    </header>
+    <main>
+        <nav id="main-nav" aria-label="Opisy języków">
+          <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
+            <span class="nav_toggle_icon" aria-hidden="true">☰</span>
+            <span class="nav_toggle_label">Zwiń</span>
+          </button>
+          <h1>Menu</h1>
+          <div id="language-links" class="nav_links">
+            <!-- to wy robicie mi się nie chce -->
+             <a href="index.html"><img src="assets/home-icon.png" alt="home" class="home_icon"></i>Strona główna</a>
+            <a href="python.html"><i class="devicon-python-plain" aria-hidden="true"></i>Opis języka Python</a>
+            <a href="php.html"><i class="devicon-php-plain" aria-hidden="true"></i>Opis języka PHP</a>
+            <a href="javascript.html"><i class="devicon-javascript-plain" aria-hidden="true"></i>Opis języka JavaScript</a>
+            <a href=""><i class="devicon-java-plain" aria-hidden="true"></i>Opis języka Java</a>
+            <a href=""><i class="devicon-kotlin-plain" aria-hidden="true"></i>Opis języka Kotlin</a>
+            <a href=""><i class="devicon-cplusplus-plain" aria-hidden="true"></i>Opis języka C++</a>
+          </div>
+        </nav>
+        <div class="section_container">
+            <style>
+              .home_icon{
+                filter: brightness(0) invert(100%);
+              }
+              body{
+                background-image: url("assets/BUILD141.png");
+                background-size: 100px 100px;
+              }
+              .section_container {
+                height: auto;
+                margin-top: 0;
+                justify-content: flex-start;
+                align-items: stretch;
+                
+              }
+              .main_box {
+                background-color: rgb(245, 245, 251);
+              }
+              header h1{
+                color: rgb(119, 123, 180);
+              }
+              nav::before{
+                background-color: rgb(119, 123, 180);
+              }
+              .nav_toggle{
+                color: white;
+              }
+              nav a,
+              nav h1,
+              .nav_toggle{
+                color: white;
+              }
+              header::after{
+                background-color: rgb(119, 123, 180);
+              }
+              .section_container .bordered_text {
+                margin: 10px 0 24px;
+                text-align: justify;
+              }
+              nav h1{
+                color: white;
+              }
+              .bordered_text{
+                border-left: 6px solid rgb(119, 123, 180);
+              }
+            </style>
+            <p class="bordered_text">
+              PHP (PHP: Hypertext Preprocessor) to skryptowy język programowania, używany przede wszystkim po stronie serwera do tworzenia stron i aplikacji internetowych. Może być osadzany w HTML-u i działa na wielu popularnych serwerach.
+            </p>
+            
+            
+            <p class="bordered_text">
+                <strong>Popularność:</strong><br> Według danych projektu liczba nowych repozytoriów z PHP wzrosła z 148 w 2008 roku do 2 202 w 2025 roku. Najwyższy wynik w tym zestawieniu odnotowano w 2017 roku — 7 546 repozytoriów.
+            </p>
+            
+            <p class="bordered_text">
+                <strong>Do czego służy?</strong><br> PHP jest często wykorzystywany do generowania dynamicznych stron, obsługi formularzy i komunikacji z bazami danych. Popularne systemy, takie jak WordPress, oraz frameworki, m.in. Laravel i Symfony, korzystają z PHP.
+            </p>
+            
+            <p class="bordered_text">
+                <strong>Historia i rozwój:</strong><br> PHP stworzył Rasmus Lerdorf; pierwsze narzędzia, które dały początek językowi, udostępnił w 1995 roku. Od tego czasu PHP rozwinął się z zestawu skryptów do pełnoprawnego języka serwerowego, rozwijanego w kolejnych wersjach.
+            </p>
+            <p class="bordered_text">
+                <strong>Najważniejsze zmiany w historii PHP:</strong><br>
+                <strong>1995 — PHP/FI:</strong> Rasmus Lerdorf udostępnił zestaw narzędzi do tworzenia dynamicznych stron, z którego rozwinął się PHP.<br>
+                <strong>1997 — PHP/FI 2:</strong> opublikowano drugą wersję, która zyskała większe możliwości i szersze grono użytkowników.<br>
+                <strong>1998 — PHP 3:</strong> przepisano i rozszerzono język; rozwój przejęła szersza społeczność, a nazwę rozwinięto do „PHP: Hypertext Preprocessor”.<br>
+                <strong>2000 — PHP 4:</strong> wprowadzono Zend Engine 1, poprawiając wydajność wykonywania skryptów.<br>
+                <strong>2004 — PHP 5:</strong> Zend Engine 2 przyniósł znacznie lepszą obsługę programowania obiektowego i klas.<br>
+                <strong>2015 — PHP 7:</strong> duża poprawa wydajności oraz nowe możliwości, m.in. deklaracje typów zwracanych.<br>
+                <strong>2020 — PHP 8.0:</strong> dodano m.in. kompilator JIT, nazwane argumenty, typy unijne, atrybuty i wyrażenie <code>match</code>.<br>
+                <strong>2021 — PHP 8.1:</strong> pojawiły się wyliczenia (<code>enum</code>), włókna (<code>Fibers</code>) i typy wyłącznie do odczytu.
+            </p>
+            <p class="bordered_text">
+                <strong>Gdzie się go używa?</strong><br> W backendzie stron i aplikacji, systemach zarządzania treścią (np. WordPress), sklepach internetowych oraz usługach korzystających z baz danych.
+            </p>
+            
+            <div class="sources">
+              <p class="bordered_text">Źródła:
+                <a href="https://www.php.net/">PHP.net</a>
+                <a href="https://www.php.net/releases/">Wydania PHP</a>
+                <a href="https://docs.github.com/en">GitHub API</a>
+              </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+      <div class="scrolling">
+        <span>Projekt stworzony przez:</span>
+        <span><a href="https://github.com/HAQ20">Antoni Trzebuniak</a></span>
+        <span><a href="https://github.com/janorda">Jan Orda</a></span>
+        <span><a href="https://github.com/Salamon4546">Dawid Wójtowicz</a></span>
+      </div>
+    </footer>
+    </div>
+</body>
+
+
+<script type="text/javascript">
+// <![CDATA[
+var speed=100; // speed colours change, 1 second = 1000
+var delay=25; // how long to wait for each wipe
+var alink=""; // page to link text to (set to ="" for no link)
+
+/****************************
+*   Wipe Out Text Effect    *
+*(c)2003-15 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+function addLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addLoadEvent(swab);
+
+var w_txt;
+function swab() { if (document.getElementById) {
+  var wiper=document.getElementById("wipe");
+  w_txt=wiper.firstChild.nodeValue;
+  while (wiper.childNodes.length) wiper.removeChild(wiper.childNodes[0]);
+  for (var i=0; i<w_txt.length; i++) {
+    var wipei=document.createElement("span");
+    wipei.setAttribute("id", "wipe"+i);
+    wipei.appendChild(document.createTextNode(w_txt.charAt(i)));
+    if (alink) {
+      wipei.style.cursor="pointer";
+      wipei.onclick=function() { top.location.href=alink; }
+    }
+    wiper.appendChild(wipei);
+  }
+  wipe(0);
+}}
+
+function wipe(c) {
+  if (c === 0) for (var w=0; w<w_txt.length; w++) document.getElementById("wipe"+ w).style.visibility="hidden";
+  if (c<w_txt.length) document.getElementById("wipe"+ c).style.visibility="visible";
+  setTimeout(function () {
+      wipe(c + 1);
+    }, speed);
+}
+// ]]>
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+  
+  <script>
+    // Wczytywanie data.json
+    fetch("data.json")
+      .then(r => r.json())
+      .then(data => {
+
+
+        // grupowamie i indexowanie osobnych języków żeby się osobno dało jakoś do nich ustawiać proporcje type shit
+        const datasets = Object.entries(data.series).map(
+        ([lang, values], index) => ({
+            label: lang,
+            data: values,
+            tension: 0.3,
+        })
+        );
+
+        // wykres
+        new Chart(document.getElementById("chart"), { // to jest giga fajne https://www.w3schools.com/js/js_graphics_chartjs.asp
+        //  https://www.chartjs.org/docs/latest/general/options.html
+
+          type: "line",
+
+          data: { labels: data.years, datasets }, // lata i dane na jeden język z ustawionymi proporcjami i stuff, tam na górze jest datasets możecie to przeczytać
+          options: {
+            interaction: { mode: "index", intersect: false }, // tooltip pokazuje wszystkie języki naraz
+            plugins: {
+              title: { display: true, text: "Nowe repozytoria na GitHubie według roku", font: { size: 15 } } 
+            },
+            scales: {
+              y: { title: { display: true, text: "Liczba repozytoriów", font: { size: 15 } } }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+          }
+        });
+      });
+  </script>
+  <script>
+    // animation script
+    const navigation = document.getElementById("main-nav");
+    const navigationToggle = navigation.querySelector(".nav_toggle");
+    const navigationLabel = navigationToggle.querySelector(".nav_toggle_label");
+    navigation.style.height = `${navigation.getBoundingClientRect().height}px`;
+
+    navigationToggle.addEventListener("click", () => {
+      const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
+
+      navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-collapsed", isExpanded);
+    });
+  </script>
+</html>
