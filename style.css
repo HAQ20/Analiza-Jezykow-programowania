@@ -214,6 +214,7 @@ nav a:hover {
 }
 
 .section_container {
+    margin-top: 70px;
     width: 100%;
     height: 400px;
     display: flex;
@@ -225,8 +226,19 @@ nav a:hover {
     flex-direction: column;
 }
 
-.section_container p {
-    width: min(900px, 90%);
+.flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexbox_col{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bordered_text {
     margin: 10% 0 24px;
     padding: 18px 22px;
     color: rgb(49, 34, 34);
@@ -238,18 +250,51 @@ nav a:hover {
     line-height: 1.6;
     text-align: center;
 }
-
-.section_container canvas {
-    margin-right: 100px;
+.bordered_text a{
+    padding-inline: 4px;
 }
 
+#chart{
+    width: 600px;
+    height: 400px;
+}
+
+.chart-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 20px;
+    align-items: center;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 420px;
+    min-width: 0;
+}
+
+#chart {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+.gif-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gif-column img {
+    width: 100%;
+    height: auto;
+}
 
 /* FOOTER */
-footer{
+footer {
     padding: 16px;
 }
 
-footer::before{
+footer::before {
     display: block;
     width: 100%;
     height: 4px;
@@ -263,22 +308,31 @@ footer::before{
     margin-top: 16px;
     width: 100%;
     display: inline-block;
-    animation: scroll-text 10s linear infinite;
+    animation: scroll-text 20s linear infinite;
 }
+
 .scrolling:hover {
     animation-play-state: paused;
 }
-.scrolling span {
-    padding-right: 5%;
+
+.scrolling span,
+.scrolling span a {
+    text-decoration: none;
+    color: rgb(49, 34, 34);
+    padding-inline: 30px;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
 @keyframes scroll-text {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-80%); }
-}
+    0% {
+        transform: translateX(100%);
+    }
 
+    100% {
+        transform: translateX(-80%);
+    }
+}
 
 @media (max-width: 650px) {
     body {
@@ -333,5 +387,20 @@ footer::before{
         margin-bottom: 20px;
         padding: 16px 18px;
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .chart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .gif-column {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .gif-column img {
+        max-width: 150px;
     }
 }

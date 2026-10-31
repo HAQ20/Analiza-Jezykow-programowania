@@ -9,15 +9,15 @@
 <body>
   <div class="main_box">
     <header>
-        <h1>Analiza Popularności Języków Programowania</h1>
+        <h1><span id="wipe">Analiza Popularności Języków Programowania</span></h1>
     </header>
     <main>
         <nav id="main-nav" aria-label="Opisy języków">
           <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
             <span class="nav_toggle_icon" aria-hidden="true">☰</span>
-            <span class="nav_toggle_label">Zwiń menu</span>
+            <span class="nav_toggle_label">Zwiń</span>
           </button>
-          <h1>Opisy</h1>
+          <h1>Menu</h1>
           <div id="language-links" class="nav_links">
             <!-- to wy robicie mi się nie chce -->
              <a href="index.html"><img src="assets/home-icon.png" alt="home" class="home_icon"></i>Strona główna</a>
@@ -30,22 +30,88 @@
           </div>
         </nav>
         <div class="section_container">
-            <p>
+            <p class="bordered_text">
               Analizujemy popularność języków programowania na podstawie liczby nowych repozytoriów na GitHubie w latach 2008-2025. Dane zostały zebrane z oficjalnego API GitHub i przedstawione w formie wykresu liniowego.
             </p>
+            <div class="flexbox">
             <canvas id="chart"></canvas>
+            <div class="flexbox_col">
+            <img src="assets/catwtface.gif" alt="cat1">
+            <img src="assets/cat.GIF" alt="cat2">
+            <img src="assets/blackcat.gif" alt="cat3" style="image-rendering: pixelated;">
+            </div>
+            </div>
+            <img src="assets/fertwaveline.gif" alt="feret">
+            <div class="sources">
+              <p class="bordered_text">Źródła:
+              <a href="https://docs.github.com/en">Github API</a>
+              <a href="https://www.tiobe.com/tiobe-index/">Tiobe Index</a>
+              </p>
+            </div>
         </div>
     </main>
     <footer>
       <div class="scrolling">
         <span>Projekt stworzony przez:</span>
-        <span>Antoni Trzebuniak</span>
-        <span>Jan Orda</span>
-        <span>Dawid Wójtowicz</span>
+        <span><a href="https://github.com/HAQ20">Antoni Trzebuniak</a></span>
+        <span><a href="https://github.com/janorda">Jan Orda</a></span>
+        <span><a href="https://github.com/Salamon4546">Dawid Wójtowicz</a></span>
       </div>
     </footer>
     </div>
 </body>
+
+
+<script type="text/javascript">
+// <![CDATA[
+var speed=100; // speed colours change, 1 second = 1000
+var delay=25; // how long to wait for each wipe
+var alink=""; // page to link text to (set to ="" for no link)
+
+/****************************
+*   Wipe Out Text Effect    *
+*(c)2003-15 mf2fm web-design*
+*  http://www.mf2fm.com/rv  *
+* DON'T EDIT BELOW THIS BOX *
+****************************/
+function addLoadEvent(funky) {
+  var oldonload=window.onload;
+  if (typeof(oldonload)!='function') window.onload=funky;
+  else window.onload=function() {
+    if (oldonload) oldonload();
+    funky();
+  }
+}
+
+addLoadEvent(swab);
+
+var w_txt;
+function swab() { if (document.getElementById) {
+  var wiper=document.getElementById("wipe");
+  w_txt=wiper.firstChild.nodeValue;
+  while (wiper.childNodes.length) wiper.removeChild(wiper.childNodes[0]);
+  for (var i=0; i<w_txt.length; i++) {
+    var wipei=document.createElement("span");
+    wipei.setAttribute("id", "wipe"+i);
+    wipei.appendChild(document.createTextNode(w_txt.charAt(i)));
+    if (alink) {
+      wipei.style.cursor="pointer";
+      wipei.onclick=function() { top.location.href=alink; }
+    }
+    wiper.appendChild(wipei);
+  }
+  wipe(0);
+}}
+
+function wipe(c) {
+  if (c === 0) for (var w=0; w<w_txt.length; w++) document.getElementById("wipe"+ w).style.visibility="hidden";
+  if (c<=w_txt.length) document.getElementById("wipe"+ c).style.visibility="visible";
+  setTimeout(function () {
+      wipe(c + 1);
+    }, speed);
+}
+// ]]>
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
   
@@ -79,7 +145,9 @@
             },
             scales: {
               y: { title: { display: true, text: "Liczba repozytoriów", font: { size: 15 } } }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false,
           }
         });
       });
@@ -95,7 +163,6 @@
       const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
 
       navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
-      navigationLabel.textContent = isExpanded ? "Rozwiń menu" : "Zwiń menu";
       navigation.classList.toggle("is-collapsed", isExpanded);
     });
   </script>
