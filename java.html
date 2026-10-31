@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java - Popularność języków</title>
+    <link rel="stylesheet" href="java.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+
+<div class="main_box">
+    <header>
+        <h1>Język programowania Java</h1>
+    </header>
+
+    <main>
+        <nav id="main-nav" aria-label="Menu języków">
+            <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
+                <span class="nav_toggle_icon" aria-hidden="true">☰</span>
+                <span class="nav_toggle_label">Zwiń</span>
+            </button>
+
+            <h1>Menu</h1>
+
+            <div id="language-links" class="nav_links">
+                <a href="index.html"><img src="assets/home-icon.png" alt="" class="home_icon">Strona główna</a>
+                <a href=""><i class="devicon-python-plain"></i>Opis języka Python</a>
+                <a href=""><i class="devicon-php-plain"></i>Opis języka PHP</a>
+                <a href=""><i class="devicon-javascript-plain"></i>Opis języka JavaScript</a>
+                <a href="java.html" class="active"><i class="devicon-java-plain"></i>Opis języka Java</a>
+                <a href=""><i class="devicon-kotlin-plain"></i>Opis języka Kotlin</a>
+                <a href="cpp.html"><i class="devicon-cplusplus-plain"></i>Opis języka C++</a>
+            </div>
+        </nav>
+
+        <div class="section_container">
+
+            <section class="description">
+                <h2>Czym jest Java?</h2>
+                <p>
+                    Java to obiektowy język programowania stworzony przez firmę Sun Microsystems.
+                    Jego pierwsza publiczna wersja pojawiła się w 1995 roku.
+                    Jest wykorzystywany między innymi do tworzenia aplikacji,
+                    systemów biznesowych i programów serwerowych.
+                </p>
+            </section>
+
+            <section class="description">
+                <h2>Historia języka</h2>
+                <div class="timeline">
+                    <p><strong>1991</strong> - rozpoczęcie prac nad językiem Oak.</p>
+                    <p><strong>1995</strong> - publiczne udostępnienie Javy.</p>
+                    <p><strong>1998</strong> - Java 2 i rozwój platformy.</p>
+                    <p><strong>2006</strong> - udostępnienie OpenJDK.</p>
+                    <p><strong>2011</strong> - premiera Java 7.</p>
+                    <p><strong>2014</strong> - Java 8 i wprowadzenie wyrażeń lambda.</p>
+                    <p><strong>2017</strong> - rozpoczęcie regularnych wydań co pół roku.</p>
+                    <p><strong>2021</strong> - Java 17 LTS.</p>
+                    <p><strong>2023</strong> - Java 21 LTS.</p>
+                    <p><strong>2025</strong> - Java 25 LTS.</p>
+                </div>
+            </section>
+
+            <section class="description">
+                <h2>Popularność Javy</h2>
+                <p>
+                    Wykres przedstawia liczbę nowych repozytoriów na GitHubie,
+                    w których wykryto język Java w latach 2008–2025.
+                </p>
+                <div class="chart_container">
+                    <canvas id="javaChart"></canvas>
+                </div>
+            </section>
+
+            <section class="description">
+                <h2>Aktualne wersje</h2>
+                <div class="versions">
+                    <div class="version">
+                        <h3>Java 25 LTS</h3>
+                        <p>Wydanie z długoterminowym wsparciem, zawierające kolejne usprawnienia języka i bibliotek.</p>
+                    </div>
+                    <div class="version">
+                        <h3>Java 21 LTS</h3>
+                        <p>Wprowadziła między innymi wirtualne wątki i dalszy rozwój nowoczesnych funkcji języka.</p>
+                    </div>
+                    <div class="version">
+                        <h3>Java 17 LTS</h3>
+                        <p>Ważna wersja wprowadzająca między innymi klasy zapieczętowane i ulepszenia języka.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="description">
+                <h2>Podsumowanie</h2>
+                <p>
+                    Java od wielu lat utrzymuje silną pozycję w świecie programowania.
+                    Pomimo pojawiania się nowych języków nadal jest wykorzystywana
+                    w dużych systemach, aplikacjach serwerowych i programach biznesowych.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="scrolling">
+            <span>Projekt stworzony przez:</span>
+            <span>Antoni Trzebuniak</span>
+            <span>Jan Orda</span>
+            <span>Dawid Wójtowicz</span>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+
+<script>
+    fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            new Chart(document.getElementById("javaChart"), {
+                type: "line",
+                data: {
+                    labels: data.years,
+                    datasets: [{
+                        label: "Java",
+                        data: data.series.Java,
+                        borderColor: "#a64f45",
+                        backgroundColor: "rgba(166, 79, 69, 0.12)",
+                        pointBackgroundColor: "#a64f45",
+                        borderWidth: 2,
+                        pointRadius: 3,
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: "#393333" }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: "#393333" },
+                            grid: { color: "rgba(57, 51, 51, 0.12)" }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: "#393333" },
+                            grid: { color: "rgba(57, 51, 51, 0.12)" }
+                        }
+                    }
+                }
+            });
+        });
+
+    const navigation = document.getElementById("main-nav");
+    const navigationToggle = navigation.querySelector(".nav_toggle");
+    const navigationLabel = navigationToggle.querySelector(".nav_toggle_label");
+
+    navigationToggle.addEventListener("click", () => {
+        const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
+
+        navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
+        navigationLabel.textContent = isExpanded ? "Rozwiń" : "Zwiń";
+        navigation.classList.toggle("is-collapsed", isExpanded);
+    });
+</script>
+
+</body>
+</html>

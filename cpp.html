@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C++ - Popularność języków</title>
+    <link rel="stylesheet" href="cpp.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+
+<div class="main_box">
+    <header>
+        <h1>Język programowania C++</h1>
+    </header>
+
+    <main>
+        <nav id="main-nav" aria-label="Menu języków">
+            <button class="nav_toggle" type="button" aria-expanded="true" aria-controls="language-links">
+                <span class="nav_toggle_icon" aria-hidden="true">☰</span>
+                <span class="nav_toggle_label">Zwiń</span>
+            </button>
+
+            <h1>Menu</h1>
+
+            <div id="language-links" class="nav_links">
+                <a href="index.html"><img src="assets/home-icon.png" alt="" class="home_icon">Strona główna</a>
+                <a href=""><i class="devicon-python-plain"></i>Opis języka Python</a>
+                <a href=""><i class="devicon-php-plain"></i>Opis języka PHP</a>
+                <a href=""><i class="devicon-javascript-plain"></i>Opis języka JavaScript</a>
+                <a href="java.html"><i class="devicon-java-plain"></i>Opis języka Java</a>
+                <a href=""><i class="devicon-kotlin-plain"></i>Opis języka Kotlin</a>
+                <a href="cpp.html" class="active"><i class="devicon-cplusplus-plain"></i>Opis języka C++</a>
+            </div>
+        </nav>
+
+        <div class="section_container">
+
+            <section class="description">
+                <h2>Czym jest C++?</h2>
+                <p>
+                    C++ to uniwersalny, obiektowy język programowania stworzony przez
+                    Bjarne Stroustrupa. Powstał jako rozwinięcie języka C.
+                    Jest wykorzystywany między innymi do tworzenia gier,
+                    programów komputerowych, systemów operacyjnych i aplikacji wymagających wysokiej wydajności.
+                </p>
+            </section>
+
+            <section class="description">
+                <h2>Historia języka</h2>
+                <div class="timeline">
+                    <p><strong>1979</strong> – rozpoczęcie prac nad językiem C with Classes.</p>
+                    <p><strong>1983</strong> – zmiana nazwy na C++.</p>
+                    <p><strong>1985</strong> – pierwsze komercyjne wydanie C++.</p>
+                    <p><strong>1998</strong> – oficjalny standard C++98.</p>
+                    <p><strong>2003</strong> – aktualizacja standardu C++03.</p>
+                    <p><strong>2011</strong> – C++11 i wprowadzenie wielu nowych funkcji.</p>
+                    <p><strong>2014</strong> – standard C++14.</p>
+                    <p><strong>2017</strong> – standard C++17.</p>
+                    <p><strong>2020</strong> – C++20 i między innymi moduły oraz koncepcje.</p>
+                    <p><strong>2023</strong> – standard C++23.</p>
+                    <p><strong>2026</strong> – dalszy rozwój standardu C++.</p>
+                </div>
+            </section>
+
+            <section class="description">
+                <h2>Popularność C++</h2>
+                <p>
+                    Wykres przedstawia liczbę nowych repozytoriów na GitHubie,
+                    w których wykryto język C++ w latach 2008–2025.
+                </p>
+                <div class="chart_container">
+                    <canvas id="cppChart"></canvas>
+                </div>
+            </section>
+
+            <section class="description">
+                <h2>Aktualne wersje</h2>
+                <div class="versions">
+                    <div class="version">
+                        <h3>C++23</h3>
+                        <p>Najnowszy opublikowany standard, wprowadzający kolejne usprawnienia języka i biblioteki standardowej.</p>
+                    </div>
+                    <div class="version">
+                        <h3>C++20</h3>
+                        <p>Duża aktualizacja wprowadzająca między innymi koncepcje, moduły i zakresy.</p>
+                    </div>
+                    <div class="version">
+                        <h3>C++17</h3>
+                        <p>Wprowadził między innymi instrukcję if constexpr oraz usprawnienia biblioteki standardowej.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="description">
+                <h2>Podsumowanie</h2>
+                <p>
+                    C++ pozostaje ważnym językiem programowania, szczególnie tam,
+                    gdzie liczy się wydajność i kontrola nad zasobami komputera.
+                    Mimo swojej długiej historii nadal jest rozwijany i wykorzystywany
+                    w wielu nowoczesnych projektach.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="scrolling">
+            <span>Projekt stworzony przez:</span>
+            <span>Antoni Trzebuniak</span>
+            <span>Jan Orda</span>
+            <span>Dawid Wójtowicz</span>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7"></script>
+
+<script>
+    fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            new Chart(document.getElementById("cppChart"), {
+                type: "line",
+                data: {
+                    labels: data.years,
+                    datasets: [{
+                        label: "C++",
+                        data: data.series["C++"],
+                        borderColor: "#477DA8",
+                        backgroundColor: "rgba(71, 125, 168, 0.12)",
+                        pointBackgroundColor: "#477DA8",
+                        borderWidth: 2,
+                        pointRadius: 3,
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: "#333b43" }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: "#333b43" },
+                            grid: { color: "rgba(51, 59, 67, 0.12)" }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: "#333b43" },
+                            grid: { color: "rgba(51, 59, 67, 0.12)" }
+                        }
+                    }
+                }
+            });
+        });
+
+    const navigation = document.getElementById("main-nav");
+    const navigationToggle = navigation.querySelector(".nav_toggle");
+    const navigationLabel = navigationToggle.querySelector(".nav_toggle_label");
+
+    navigationToggle.addEventListener("click", () => {
+        const isExpanded = navigationToggle.getAttribute("aria-expanded") === "true";
+
+        navigationToggle.setAttribute("aria-expanded", String(!isExpanded));
+        navigationLabel.textContent = isExpanded ? "Rozwiń" : "Zwiń";
+        navigation.classList.toggle("is-collapsed", isExpanded);
+    });
+</script>
+
+</body>
+</html>
